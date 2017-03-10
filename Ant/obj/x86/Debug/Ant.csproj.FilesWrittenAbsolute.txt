@@ -1,7 +1,0 @@
-/home/andrew/Dropbox/code projects/CSharp/Ant/Ant/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/andrew/Dropbox/code projects/CSharp/Ant/Ant/obj/x86/Debug/Ant.gtk-gui.gui.stetic
-/home/andrew/Dropbox/code projects/CSharp/Ant/Ant/bin/Debug/Ant.exe.mdb
-/home/andrew/Dropbox/code projects/CSharp/Ant/Ant/bin/Debug/Ant.exe
-/home/andrew/Dropbox/code projects/CSharp/Ant/Ant/obj/x86/Debug/Ant.exe
-/home/andrew/Dropbox/code projects/CSharp/Ant/Ant/obj/x86/Debug/Ant.exe.mdb
-/home/andrew/Dropbox/code projects/CSharp/Ant/Ant/bin/Debug/Newtonsoft.Json.dll

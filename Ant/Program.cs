@@ -1,27 +1,19 @@
 ﻿using System;
-using Gtk;
-using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Ant
-{
-	class MainClass
-	{
-		public static void Main (string[] args)
-		{
-  			Application.Init();
-//			MainWindow win = new MainWindow ();
-//			win.Show ();
-
-//			WriteFile testObj = new WriteFile("/home/andrew/testfile.csv");
-//			testObj.writeDatetime ();
-//			testObj.writeMessage ("test \"this\" message3");
-
-            PromptManager testObj = new PromptManager("/home/andrew/Desktop/testfile.csv","10:57 PM");
-			testObj.startTimer ();
-            
-
-			Application.Run();
-
-		}
-	}
+namespace Ant_02 {
+    static class Program {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main() {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainWindow());
+        }
+    }
 }

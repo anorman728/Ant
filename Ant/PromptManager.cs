@@ -79,11 +79,7 @@ namespace Ant
 
 			for (int i = 0; i < len; i++) {
 				if (this.timeArr [i].isMatch (dumDT)) {
-					try{
-						this.prompt ();
-					} catch (Exception ex){
-						Console.WriteLine(ex.Message);
-					}
+					this.prompt ();
 				}
 			}
         }
@@ -91,7 +87,9 @@ namespace Ant
         private void prompt()
         {
 			this.writeFileObj.writeDatetime();
+			Console.WriteLine (1);//dmz1
 			PromptWindow win = new PromptWindow(this.writeFileObj);
+			Console.WriteLine (2);//dmz1
             win.Show();
         }
 	}

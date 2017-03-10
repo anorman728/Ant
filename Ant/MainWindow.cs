@@ -1,16 +1,21 @@
 ﻿using System;
-using Gtk;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-public partial class MainWindow: Gtk.Window
-{
-	public MainWindow () : base (Gtk.WindowType.Toplevel)
-	{
-		Build ();
-	}
+namespace Ant_02 {
+    public partial class MainWindow : Form {
+        public MainWindow() {
+            InitializeComponent();
+        }
 
-	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
-	{
-		Application.Quit ();
-		a.RetVal = true;
-	}
+        private void MainWindow_Load(object sender, EventArgs e) {
+
+        }
+    }
 }
