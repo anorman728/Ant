@@ -26,38 +26,34 @@ ANT Notes:
         03/06/2017 9:30 PM, "I'm working on this, ''that'', and the other."
     endex
 > PromptManager (class)
-    > Create constructor
+    + Create constructor
         * Arguments:
             String of file path
-            Array of times to prompt user.
-        > Set timeArr property (see below)
-        > Create writeFileObj.
-    > timeArr (string array property)
+            String of comma-separated times.
+        + Set timeArr property (see below)
+        + Create writeFileObj.
+    + timeArr (HourMinuteAMPM array property)
         * Array that contains all times that want to prompt user.
         * All strings in the form "HH:mm".  (I think this will probably be better than DateTime objects).
-    > writeFileObj (object property)
+        * It's possible that will need to replace this with 
+    + writeFileObj (object property)
         * Instance of WriteFile class.
-    > prompt (private method)
+    + prompt (private method)
         * Method that prompts user for input while asking "What are you working on?"
-        > On display:
-            > Call this.writeFileObj.writeDatetime
-        > On Enter/OK:
-            > Call this.writeFileObj.writeMessage(message)
-        > On Esc/Cancel:
-            > Remove prompt
+        + On display:
+            + Call this.writeFileObj.writeDatetime
+        + On Enter/OK:
+            + Call this.writeFileObj.writeMessage(message)
+        + On Esc/Cancel:
+            + Remove prompt
                 * Will still have first cell in results of datetime, but message will be blank.
-        > Remove prompt if goes unanswered when another prompt is called.
+        - Remove prompt if goes unanswered when another prompt is called.
             * Will still have first cell in results of datetime, but message will be blank.
-    > checkMinute (private method)
-        * Checks if current minute is in timeArr.
-        * Returns boolean.
-    > promptIfCheckMinute (private method)
-        * Run prompt if checkMinute is true.
+            * Will need to come back to this in a future version.  For now, just have overlapping messages.
+    > promptIfInArray (private method)
+        * Run prompt if any values in array match current minute.
     > run/stop
         * Not sure yet how this is going to work yet because don't know how C# will handle this yet.
-> Settings class
-    > Save settings to config file.
-    > Load settings from config file.
 > MainWindow
     > Needs to be able to modify two things:
         > timeArr
@@ -73,3 +69,20 @@ ANT Notes:
     > Need an "about" popup.
         > ANT = "Andrew Norman's Timelogger."
         > github.com link.
+    > Add Ant icon.
+> Settings class
+    * How settings should be handled:
+        * Json.NET (nuget package)
+        * Need to use "Newtonsoft.Json" directive.
+        * JsonConvert.SerializeObject will convert an object's public properties to JSON object string.
+            Example:
+                someObject thisObj = new someObject();
+                String jsonStr = JsonConvert.SerializeObject(thisObj);
+            endex
+        * JsonConvert.DeserializeObject will parse a JSON string and convert it to a .NET object.
+            Example:
+                someObject thisObj = JsonConvert.DeserializeObject<someObject>(jsonStr);
+            endex
+        * Should be able to use the same read/write methods to read and save files.
+    > Save settings to config file.
+    > Load settings from config file.

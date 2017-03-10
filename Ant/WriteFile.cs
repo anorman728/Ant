@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Diagnostics;
 
 namespace Ant
 {
@@ -19,7 +20,14 @@ namespace Ant
                 return this.filePath;
             }
 
-		public WriteFile (string inputPath)
+        /**
+         * Constructor for WriteFile.
+         *
+         *@access   Public
+         *@param    String      inputPath       Path to use for CSV file.
+         */
+
+		public WriteFile (String inputPath)
 		{
             this.setFilePath(inputPath);
 		}
@@ -47,7 +55,7 @@ namespace Ant
         public void writeDatetime()
         {
             this.touch();
-            using (StreamWriter sw = File.AppendText(this.filePath))
+			using (StreamWriter sw = File.AppendText(this.filePath))
             {
                 DateTime currentTime = DateTime.Now;
                 sw.Write("\r\n"+currentTime);
@@ -58,6 +66,7 @@ namespace Ant
          * Write message to end of last line in file.
          *
          *@access   Public
+         *@param    String      message
          */
 
         public void writeMessage(String message)
