@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ant_02.Properties {
+namespace Ant.Properties {
 
 
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

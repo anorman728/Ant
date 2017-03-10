@@ -1,4 +1,4 @@
-﻿namespace Ant_02 {
+﻿namespace Ant {
     partial class MainWindow {
         /// <summary>
         /// Required designer variable.

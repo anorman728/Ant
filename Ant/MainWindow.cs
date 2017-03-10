@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ant_02 {
+namespace Ant {
     public partial class MainWindow : Form {
         public MainWindow() {
             InitializeComponent();
