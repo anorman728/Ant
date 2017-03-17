@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Timers;
+using Microsoft.VisualBasic;
+using System.Diagnostics;
 
 namespace Ant
 {
@@ -60,10 +62,12 @@ namespace Ant
 
         public void startTimer()
         {
+            Debug.WriteLine(1);
             this.timer.Start();
             this.timer.Elapsed += promptIfInArray;
             this.timer.AutoReset = true;
             this.timer.Enabled = true;
+            Debug.WriteLine("catch");
         }
 
         public void stopTimer()
@@ -87,10 +91,8 @@ namespace Ant
         private void prompt()
         {
 			this.writeFileObj.writeDatetime();
-			Console.WriteLine (1);//dmz1
-			PromptWindow win = new PromptWindow(this.writeFileObj);
-			Console.WriteLine (2);//dmz1
-            win.Show();
+            String message = Interaction.InputBox("What are you working on right now?");
+            this.writeFileObj.writeMessage(message);
         }
 	}
 }

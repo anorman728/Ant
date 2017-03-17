@@ -25,9 +25,9 @@ ANT Notes:
     Example:
         03/06/2017 9:30 PM, "I'm working on this, ''that'', and the other."
     endex
-> Review all classes to make sure they work under traditional Windows Forms instead of Gtk#.
-    > Also make sure PromptWindow.cs is replaced by an InputBox (if possible).
-> PromptManager (class)
++ Review all classes to make sure they work under traditional Windows Forms instead of Gtk#.
+    + Also make sure PromptWindow.cs is replaced by an InputBox (if possible).
++ PromptManager (class)
     + Create constructor
         * Arguments:
             String of file path
@@ -52,9 +52,9 @@ ANT Notes:
         - Remove prompt if goes unanswered when another prompt is called.
             * Will still have first cell in results of datetime, but message will be blank.
             * Will need to come back to this in a future version.  For now, just have overlapping messages.
-    > promptIfInArray (private method)
+    + promptIfInArray (private method)
         * Run prompt if any values in array match current minute.
-    > run/stop
+    + run/stop
         * Not sure yet how this is going to work yet because don't know how C# will handle this yet.
 > MainWindow
     > Needs to be able to modify two things:

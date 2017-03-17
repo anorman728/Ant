@@ -1,13 +1,5 @@
 ﻿using System;
 
-/*
-  Needs to do the following:
-    + Store hour
-    + Store minute
-    + Store AM/PM
-    > Method to compare a datetime to itself, return true or false based on match.
- */
-
 namespace Ant
 {
     /**

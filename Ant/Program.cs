@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Ant {
     static class Program {
@@ -11,9 +12,14 @@ namespace Ant {
         /// </summary>
         [STAThread]
         static void Main() {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new MainWindow());
+
+            PromptManager testObj = new PromptManager("C:\\Users\\Andrew\\Desktop\\Testing.csv","1:05 PM;1:07 PM");
+            testObj.startTimer();
+
+            Application.Run();
         }
     }
 }
