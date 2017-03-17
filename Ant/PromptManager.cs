@@ -14,6 +14,7 @@ namespace Ant
         private WriteFile writeFileObj;
         private HourMinuteAMPM[] timeArr;
         private Timer timer;
+        private bool isUp = false;
 
         /* Getters and setters. */
 
@@ -62,12 +63,10 @@ namespace Ant
 
         public void startTimer()
         {
-            Debug.WriteLine(1);
             this.timer.Start();
             this.timer.Elapsed += promptIfInArray;
             this.timer.AutoReset = true;
             this.timer.Enabled = true;
-            Debug.WriteLine("catch");
         }
 
         public void stopTimer()
@@ -90,9 +89,14 @@ namespace Ant
 
         private void prompt()
         {
-			this.writeFileObj.writeDatetime();
-            String message = Interaction.InputBox("What are you working on right now?");
-            this.writeFileObj.writeMessage(message);
+            if (!this.isUp){
+                this.isUp = true;
+                this.writeFileObj.writeDatetime();
+                System.Media.SystemSounds.Beep.Play();
+                String message = Interaction.InputBox("What are you working on right now?");
+                this.writeFileObj.writeMessage(message);
+                this.isUp = false;
+            }
         }
 	}
 }
