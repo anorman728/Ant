@@ -58,7 +58,7 @@ ANT Notes:
         * Not sure yet how this is going to work yet because don't know how C# will handle this yet.
     + Find out how to limit inputBox.
         * Now doesn't create new box if one is already up.
-    > Beep sound
+    + Beep sound
 > MainWindow
     > Needs to be able to modify two things:
         > timeArr

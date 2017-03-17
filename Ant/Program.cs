@@ -16,7 +16,7 @@ namespace Ant {
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MainWindow());
 
-            PromptManager testObj = new PromptManager("C:\\Users\\Andrew\\Desktop\\Testing.csv","3:28 PM,3:29 PM");
+            PromptManager testObj = new PromptManager("C:\\Users\\Andrew\\Desktop\\Testing.csv","3:57 PM");
             testObj.startTimer();
 
             Application.Run();

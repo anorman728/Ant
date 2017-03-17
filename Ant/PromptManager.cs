@@ -58,7 +58,7 @@ namespace Ant
             this.createWriteFileObj(inputPath);
             this.createTimeArr(times);
 
-            this.timer = new Timer(60000);
+            this.timer = new Timer(1000);
 		}
 
         public void startTimer()
@@ -77,14 +77,16 @@ namespace Ant
 
 		private void promptIfInArray(object source, ElapsedEventArgs e)
         {
-            int len = this.timeArr.Length;
-			DateTime dumDT = DateTime.Now;
+            if (DateTime.Now.Second == 0){
+                int len = this.timeArr.Length;
+                DateTime dumDT = DateTime.Now;
 
-			for (int i = 0; i < len; i++) {
-				if (this.timeArr [i].isMatch (dumDT)) {
-					this.prompt ();
-				}
-			}
+                for (int i = 0; i < len; i++) {
+                    if (this.timeArr [i].isMatch (dumDT)) {
+                        this.prompt ();
+                    }
+                }
+            }
         }
 
         private void prompt()
