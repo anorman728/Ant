@@ -7,8 +7,8 @@
     <ProjectGuid>{27C7D34E-4884-482D-BF25-56D3B6F390EA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ant_02</RootNamespace>
-    <AssemblyName>Ant 02</AssemblyName>
+    <RootNamespace>Ant</RootNamespace>
+    <AssemblyName>Ant</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
