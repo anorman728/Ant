@@ -27,7 +27,7 @@ ANT Notes:
     endex
 + Review all classes to make sure they work under traditional Windows Forms instead of Gtk#.
     + Also make sure PromptWindow.cs is replaced by an InputBox (if possible).
-> PromptManager (class)
++ PromptManager (class)
     + Create constructor
         * Arguments:
             String of file path
@@ -59,6 +59,7 @@ ANT Notes:
     + Find out how to limit inputBox.
         * Now doesn't create new box if one is already up.
     + Beep sound
+> Create docblocks throughout project.
 > MainWindow
     > Needs to be able to modify two things:
         > timeArr
