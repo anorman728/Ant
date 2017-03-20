@@ -59,7 +59,7 @@ ANT Notes:
     + Find out how to limit inputBox.
         * Now doesn't create new box if one is already up.
     + Beep sound
-> Create docblocks throughout project.
++ Create docblocks throughout project.
 > MainWindow
     > Needs to be able to modify two things:
         > timeArr

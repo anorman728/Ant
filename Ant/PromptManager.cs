@@ -61,7 +61,13 @@ namespace Ant
             this.timer = new Timer(1000);
 		}
 
-        public void startTimer()
+        /**
+         * Start timer for prompts.
+         *
+         *@access   Public
+         */
+
+        public void startPrompting()
         {
             this.timer.Start();
             this.timer.Elapsed += promptIfInArray;
@@ -69,11 +75,27 @@ namespace Ant
             this.timer.Enabled = true;
         }
 
-        public void stopTimer()
+        /**
+         * Stop timer for prompts.
+         *
+         *@access   Public
+         */
+
+        public void stopPrompting()
         {
 			this.timer.Stop();
             this.timer.Dispose();
         }
+
+        /**
+         * Check if the current time matches any of the times in timeArr and
+         * call this.prompt if it does.
+         * Designed to be used by the this.timer object.
+         *
+         *@access   Private
+         *@param    Object              source
+         *@param    ElaspsedEventArgs   e
+         */
 
 		private void promptIfInArray(object source, ElapsedEventArgs e)
         {
@@ -88,6 +110,13 @@ namespace Ant
                 }
             }
         }
+
+        /**
+         * Write current datetime to file, request message from user, write
+         * message to file.
+         *
+         *@access   Private
+         */
 
         private void prompt()
         {
