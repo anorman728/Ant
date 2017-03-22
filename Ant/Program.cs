@@ -12,14 +12,9 @@ namespace Ant {
         /// </summary>
         [STAThread]
         static void Main() {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainWindow());
-
-            PromptManager testObj = new PromptManager("C:\\Users\\Andrew\\Desktop\\Testing.csv","3:57 PM");
-            testObj.startTimer();
-
-            Application.Run();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainWindow());
         }
     }
 }

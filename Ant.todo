@@ -63,6 +63,12 @@ ANT Notes:
 > MainWindow
     > Needs to be able to modify two things:
         > timeArr
+            + Prompt Times (listbox)
+                * This is passive-- Only has other items add to it and read from it.
+            + Add Time Button
+                + Bring up new window.
+            > Delete time button.
+                * Selected time.
         > filePath
             * i.e., the one in WriteFile class.
     > Needs to be able to "start" and "stop" logging.
@@ -77,6 +83,7 @@ ANT Notes:
         > github.com link.
     > Add Ant icon.
 > Settings class
+    ! May be able to handle all of this with Data->(ApplicationSettings)
     * How settings should be handled:
         * Json.NET (nuget package)
         * Need to use "Newtonsoft.Json" directive.

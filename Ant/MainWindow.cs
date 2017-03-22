@@ -17,5 +17,19 @@ namespace Ant {
         private void MainWindow_Load(object sender, EventArgs e) {
 
         }
+
+        private void addTimeButton_Click(object sender, EventArgs e) {
+            AddTimeWindow winDum = new AddTimeWindow(this);
+            winDum.Show();
+        }
+
+        public void addTime(String hour,String minute,String ampm) {
+            String timeToAdd = hour + ":" + minute + " " + ampm;
+            this.timesListBox.Items.Add(timeToAdd);
+        }
+
+        public void deleteSelectedTime() {
+            // Todo
+        }
     }
 }
