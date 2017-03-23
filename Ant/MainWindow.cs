@@ -7,9 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Ant {
     public partial class MainWindow : Form {
+
+        private PromptManager promptManagerObj;
+
         public MainWindow() {
             InitializeComponent();
         }
@@ -29,7 +33,78 @@ namespace Ant {
         }
 
         public void deleteSelectedTime() {
-            // Todo
+            int dumInd = this.timesListBox.SelectedIndex;
+            if (dumInd != -1)
+            {
+                Object itemDum = this.timesListBox.Items[dumInd];
+                this.timesListBox.Items.Remove(itemDum);
+            }
+        }
+
+        private void deleteSelectedTimeButton_Click(object sender, EventArgs e)
+        {
+            this.deleteSelectedTime();
+        }
+
+        private void browseButton_Click(object sender, EventArgs e)
+        {
+            var FD = new OpenFileDialog();
+            if (FD.ShowDialog() == DialogResult.OK)
+            {
+                String fileName = FD.FileName;
+                this.fileNameTextBox.Text = fileName;
+            }
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            if (this.timesListBox.Items.Count > 0)
+            {
+                /* Disable elements. */
+                this.startButton.Enabled                = false;
+                this.addTimeButton.Enabled              = false;
+                this.deleteSelectedTimeButton.Enabled   = false;
+                this.browseButton.Enabled               = false;
+                this.fileNameTextBox.Enabled            = false;
+                this.timesListBox.Enabled               = false;
+                /* Enable elements */
+                    this.stopButton.Enabled = true;
+            
+                String fileName = this.fileNameTextBox.Text;
+                String timesStr = this.getTimes();
+                
+                this.promptManagerObj = new PromptManager(fileName, timesStr);
+
+                this.promptManagerObj.startPrompting();
+            }
+        }
+
+        private void stopButton_Click(object sender, EventArgs e)
+        {
+            /* Disable elements. */
+                this.startButton.Enabled                = true;
+                this.addTimeButton.Enabled              = true;
+                this.deleteSelectedTimeButton.Enabled   = true;
+                this.browseButton.Enabled               = true;
+                this.fileNameTextBox.Enabled            = true;
+                this.timesListBox.Enabled               = true;
+            /* Enable elements */
+                this.stopButton.Enabled = false;
+
+            this.promptManagerObj.stopPrompting();
+
+        }
+
+        public String getTimes(){
+            int cnt = this.timesListBox.Items.Count;
+            String[] dumArr = new String[cnt];
+
+            for (int i = 0; i < cnt; i++) {
+                dumArr[i] = this.timesListBox.Items[i].ToString();
+            }
+
+            String dumStr = String.Join(",", dumArr);
+            return dumStr;
         }
     }
 }
