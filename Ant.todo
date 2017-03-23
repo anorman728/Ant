@@ -78,6 +78,7 @@ ANT Notes:
         + When stopped, gray out stop button.
     > When close, warn if settings aren't changed.
     > Need to be able to minimize to systray.
+        * Might need to put this off until a future version.
     > Need an "about" popup.
         > ANT = "Andrew Norman's Timelogger."
         > github.com link.

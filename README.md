@@ -6,4 +6,4 @@ It will prompt you on a schedule and ask "What are you working on right now?"  T
 
 I had previously attempted to do this using Gtk# to make it cross-platform, but that was not working out because it seems to be too buggy.  It now uses a traditional Windows Forms setup.
 
-ATM, it's not complete and not yet functional.
+ATM, it's functional, but not yet complete.  Still need to add the ability to save settings, add an icon, and an "About" popup window.
