@@ -11,7 +11,6 @@ using System.Diagnostics;
 
 namespace Ant {
     public partial class MainWindow : Form {
-
         private PromptManager promptManagerObj;
 
         public MainWindow() {
@@ -74,7 +73,8 @@ namespace Ant {
             }
         }
 
-        private void stopButton_Click(object sender, EventArgs e) {
+        private void stopButton_Click(object sender, EventArgs e)
+        {
             /* Disable elements. */
                 this.startButton.Enabled                = true;
                 this.addTimeButton.Enabled              = true;
