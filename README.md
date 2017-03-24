@@ -5,11 +5,11 @@
 
 For example, if you set it up to ask you once an hour on the hour, by the end of the day you will have an hourly record of what you were working on that day.
 
-![Example01](/Readme\ pics/Example01.png?raw=true)
+![Example01](/Readme%20pics/Example01.png?raw=true)
 
-![Example02](/Readme\ pics/Example02.png?raw=true)
+![Example02](/Readme%20pics/Example02.png?raw=true)
 
-![Spreadsheet Example](/Readme\ pics/Spreadsheet\ Example.png?raw=true)
+![Spreadsheet Example](/Readme%20pics/Spreadsheet%20Example.png?raw=true)
 
 Ant is currently a Windows-only program.
 
