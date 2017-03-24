@@ -123,5 +123,16 @@ namespace Ant {
                 this.timesListBox.Items.Add(dumArr[i]);
             }
         }
+
+        private void onlineDocumentationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/anorman728/ant");
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            aboutWindow winDum = new aboutWindow();
+            winDum.Show();
+        }
     }
 }

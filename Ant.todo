@@ -78,13 +78,11 @@ ANT Notes:
         + When stopped, gray out stop button.
     - When close, warn if settings aren't changed.
         * No longer relevant.
-    > Need to be able to minimize to systray.
-        * Might need to put this off until a future version.
-    > Need an "about" popup.
-        > ANT = "Andrew Norman's Timelogger."
-        > github.com link.
-    > Add Ant icon.
-> Settings class
+    + Need an "about" popup.
+        + ANT = "Andrew Norman's Timelogger."
+        + github.com link.
+    + Add Ant icon.
+- Settings class
     ! May be able to handle all of this with Data->(ApplicationSettings)
     * How settings should be handled:
         * Json.NET (nuget package)
@@ -101,3 +99,14 @@ ANT Notes:
         * Should be able to use the same read/write methods to read and save files.
     > Save settings to config file.
     > Load settings from config file.
+    * Moot-- Handled using Properties.Settings.
+> Create executable installer.
+> Test on Win7 machine.
+> Create end-user documentation in README.md.
+    > Give direct link to install executable.
+    > Explanation of how to use it.
+    > Link to YouTube video explaining how to use it.
+        * Will need to actually make video.
+> Future additions.
+    > Button to populate Prompt Times based on intervals in a timeframe.
+    > Minimize to systray.
