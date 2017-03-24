@@ -16,12 +16,10 @@ namespace Ant {
 
         public MainWindow() {
             InitializeComponent();
+            this.populateTimesListBox(Properties.Settings.Default["timesListBox"].ToString());
+            this.fileNameTextBox.Text = Properties.Settings.Default["fileNameTextBox"].ToString();
         }
-
-        private void MainWindow_Load(object sender, EventArgs e) {
-
-        }
-
+        
         private void addTimeButton_Click(object sender, EventArgs e) {
             AddTimeWindow winDum = new AddTimeWindow(this);
             winDum.Show();
@@ -41,14 +39,13 @@ namespace Ant {
             }
         }
 
-        private void deleteSelectedTimeButton_Click(object sender, EventArgs e)
-        {
+        private void deleteSelectedTimeButton_Click(object sender, EventArgs e) {
             this.deleteSelectedTime();
         }
 
-        private void browseButton_Click(object sender, EventArgs e)
-        {
+        private void browseButton_Click(object sender, EventArgs e) {
             var FD = new OpenFileDialog();
+            FD.CheckFileExists = false;
             if (FD.ShowDialog() == DialogResult.OK)
             {
                 String fileName = FD.FileName;
@@ -56,17 +53,15 @@ namespace Ant {
             }
         }
 
-        private void startButton_Click(object sender, EventArgs e)
-        {
-            if (this.timesListBox.Items.Count > 0)
-            {
+        private void startButton_Click(object sender, EventArgs e) {
+            if (this.timesListBox.Items.Count > 0) {
                 /* Disable elements. */
-                this.startButton.Enabled                = false;
-                this.addTimeButton.Enabled              = false;
-                this.deleteSelectedTimeButton.Enabled   = false;
-                this.browseButton.Enabled               = false;
-                this.fileNameTextBox.Enabled            = false;
-                this.timesListBox.Enabled               = false;
+                    this.startButton.Enabled                = false;
+                    this.addTimeButton.Enabled              = false;
+                    this.deleteSelectedTimeButton.Enabled   = false;
+                    this.browseButton.Enabled               = false;
+                    this.fileNameTextBox.Enabled            = false;
+                    this.timesListBox.Enabled               = false;
                 /* Enable elements */
                     this.stopButton.Enabled = true;
             
@@ -79,8 +74,7 @@ namespace Ant {
             }
         }
 
-        private void stopButton_Click(object sender, EventArgs e)
-        {
+        private void stopButton_Click(object sender, EventArgs e) {
             /* Disable elements. */
                 this.startButton.Enabled                = true;
                 this.addTimeButton.Enabled              = true;
@@ -105,6 +99,29 @@ namespace Ant {
 
             String dumStr = String.Join(",", dumArr);
             return dumStr;
+        }
+
+        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            /* timesListBox settings */
+                String dumStr = this.getTimes();
+                Properties.Settings.Default["timesListBox"] = dumStr;
+
+            /* fileNameTextBox setting */
+                Properties.Settings.Default["fileNameTextBox"] = this.fileNameTextBox.Text;
+
+            /* Save settings */
+                Properties.Settings.Default.Save();
+        }
+
+        private void populateTimesListBox(String multipleTimesString)
+        {
+            String[] dumArr = multipleTimesString.Split(',');
+            int len = dumArr.Length;
+            for (int i=0;i<len;i++)
+            {
+                this.timesListBox.Items.Add(dumArr[i]);
+            }
         }
     }
 }

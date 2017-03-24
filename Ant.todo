@@ -61,7 +61,7 @@ ANT Notes:
     + Beep sound
 + Create docblocks throughout project.
 > MainWindow
-    > Needs to be able to modify two things:
+    + Needs to be able to modify two things:
         + timeArr
             + Prompt Times (listbox)
                 * This is passive-- Only has other items add to it and read from it.
@@ -71,12 +71,13 @@ ANT Notes:
                 * Selected time.
         + filePath
             * i.e., the one in WriteFile class.
-    > Needs to be able to "start" and "stop" logging.
+    + Needs to be able to "start" and "stop" logging.
         Starting:
             + Start 
             + When started, gray out everything that can edit timeArr and filePath as well as the start button.
         + When stopped, gray out stop button.
-    > When close, warn if settings aren't changed.
+    - When close, warn if settings aren't changed.
+        * No longer relevant.
     > Need to be able to minimize to systray.
         * Might need to put this off until a future version.
     > Need an "about" popup.
