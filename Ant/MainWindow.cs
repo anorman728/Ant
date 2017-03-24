@@ -8,28 +8,86 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
+using Microsoft.VisualBasic;
 
 namespace Ant {
     public partial class MainWindow : Form {
+
         private PromptManager promptManagerObj;
 
         public MainWindow() {
             InitializeComponent();
-            this.populateTimesListBox(Properties.Settings.Default["timesListBox"].ToString());
-            this.fileNameTextBox.Text = Properties.Settings.Default["fileNameTextBox"].ToString();
+            this.loadSettings();
         }
         
-        private void addTimeButton_Click(object sender, EventArgs e) {
-            AddTimeWindow winDum = new AddTimeWindow(this);
-            winDum.Show();
-        }
+        /* Events. */
 
-        public void addTime(String hour,String minute,String ampm) {
+            private void addTimeButton_Click(object sender, EventArgs e) 
+            {
+                AddTimeWindow winDum = new AddTimeWindow(this);
+                winDum.Show();
+            }
+
+            private void deleteSelectedTimeButton_Click(object sender, EventArgs e) 
+            {
+                this.deleteSelectedTime();
+            }
+
+            private void browseButton_Click(object sender, EventArgs e) 
+            {
+                this.promptUserForFilename();
+            }
+
+            private void startButton_Click(object sender, EventArgs e) 
+            {
+                this.startPrompting();
+            }
+
+            private void stopButton_Click(object sender, EventArgs e)
+            {
+                this.stopPrompting();
+            }
+
+            private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+            {
+                this.saveSettings();
+            }
+
+            private void onlineDocumentationToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                Process.Start("https://github.com/anorman728/ant");
+            }
+
+            private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                aboutWindow winDum = new aboutWindow();
+                winDum.Show();
+            }
+
+        /**
+         * Add time to timesListBox.
+         *
+         *@access   Public
+         *@param    String      hour
+         *@param    String      minute
+         *@param    String      ampm
+         */
+
+        public void addTime(String hour,String minute,String ampm) 
+        {
             String timeToAdd = hour + ":" + minute + " " + ampm;
             this.timesListBox.Items.Add(timeToAdd);
         }
 
-        public void deleteSelectedTime() {
+        /**
+         * Delete selected time from timesListBox.
+         *
+         *@access   Private
+         */
+
+        public void deleteSelectedTime() 
+        {
             int dumInd = this.timesListBox.SelectedIndex;
             if (dumInd != -1)
             {
@@ -38,11 +96,14 @@ namespace Ant {
             }
         }
 
-        private void deleteSelectedTimeButton_Click(object sender, EventArgs e) {
-            this.deleteSelectedTime();
-        }
+        /**
+         * Bring up dialog for output file and set fileNameTextBox to it.
+         *
+         *@access   Private
+         */
 
-        private void browseButton_Click(object sender, EventArgs e) {
+        private void promptUserForFilename()
+        {
             var FD = new OpenFileDialog();
             FD.CheckFileExists = false;
             if (FD.ShowDialog() == DialogResult.OK)
@@ -52,8 +113,15 @@ namespace Ant {
             }
         }
 
-        private void startButton_Click(object sender, EventArgs e) {
-            if (this.timesListBox.Items.Count > 0) {
+        /**
+         * Start prompting the user and change UI to match.
+         *
+         *@access   Private
+         */
+
+        private void startPrompting()
+        {
+            if (this.timesListBox.Items.Count > 0 && this.checkTimes()) {
                 /* Disable elements. */
                     this.startButton.Enabled                = false;
                     this.addTimeButton.Enabled              = false;
@@ -70,10 +138,18 @@ namespace Ant {
                 this.promptManagerObj = new PromptManager(fileName, timesStr);
 
                 this.promptManagerObj.startPrompting();
+            } else {
+                Interaction.MsgBox("Unable to start timer: Either the list is empty or it contains invalid times.");
             }
         }
 
-        private void stopButton_Click(object sender, EventArgs e)
+        /**
+         * Stop prompting user and change UI to match.
+         *
+         *@access   Private
+         */
+
+        private void stopPrompting()
         {
             /* Disable elements. */
                 this.startButton.Enabled                = true;
@@ -86,10 +162,16 @@ namespace Ant {
                 this.stopButton.Enabled = false;
 
             this.promptManagerObj.stopPrompting();
-
         }
 
-        public String getTimes(){
+        /**
+         * Get a string of all times in timesListBox, comma-delimited.
+         *
+         *@access   Public
+         */
+
+        public String getTimes()
+        {
             int cnt = this.timesListBox.Items.Count;
             String[] dumArr = new String[cnt];
 
@@ -101,7 +183,13 @@ namespace Ant {
             return dumStr;
         }
 
-        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        /**
+         * Save all settings.
+         *
+         *@access   Public
+         */
+
+        public void saveSettings()
         {
             /* timesListBox settings */
                 String dumStr = this.getTimes();
@@ -114,7 +202,26 @@ namespace Ant {
                 Properties.Settings.Default.Save();
         }
 
-        private void populateTimesListBox(String multipleTimesString)
+        /**
+         * Load all settings.
+         *
+         *@access   Public
+         */
+
+        public void loadSettings()
+        {
+            this.populateTimesListBox(Properties.Settings.Default["timesListBox"].ToString());
+            this.fileNameTextBox.Text = Properties.Settings.Default["fileNameTextBox"].ToString();
+        }
+
+        /**
+         * Populate timesListBox with comma-delimited string.
+         *
+         *@access   Public
+         *@param    String  multipleTimesString
+         */
+
+        public void populateTimesListBox(String multipleTimesString)
         {
             String[] dumArr = multipleTimesString.Split(',');
             int len = dumArr.Length;
@@ -124,15 +231,24 @@ namespace Ant {
             }
         }
 
-        private void onlineDocumentationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://github.com/anorman728/ant");
-        }
+        /**
+         * "True" if all times in timesListBox are valid and "False" if there
+         * are any invalid ones.
+         *
+         *@access   Public
+         *@return   Boolean
+         */
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        public bool checkTimes()
         {
-            aboutWindow winDum = new aboutWindow();
-            winDum.Show();
+            Regex rgx = new Regex(@"^\d{1,2}:\d{2} (AM|PM)$",RegexOptions.IgnoreCase);
+            bool returnVal = true; // Assume true until found otherwise.
+            int cnt = this.timesListBox.Items.Count;
+            for (int i=0; i < cnt; i++){
+                String dumStr = this.timesListBox.Items[i].ToString();
+                if (!rgx.IsMatch(dumStr)) returnVal = false;
+            }
+            return returnVal;
         }
     }
 }

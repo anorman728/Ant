@@ -100,6 +100,12 @@ ANT Notes:
     > Save settings to config file.
     > Load settings from config file.
     * Moot-- Handled using Properties.Settings.
++ Test if inputtimes are correct.
+    * Use regex.
++ Rearrange code to put events in single place.
++ Make bracket convention consistent.
+> Create documentation.
+    + In-code for MainWindow.
 > Create executable installer.
 > Test on Win7 machine.
 > Create end-user documentation in README.md.
