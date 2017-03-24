@@ -11,6 +11,8 @@ For example, if you set it up to ask you once an hour on the hour, by the end of
 
 ![Spreadsheet Example](/Readme%20pics/Spreadsheet%20Example.png?raw=true)
 
+Ant can be installed with [the installer program](/Ant%20Installer%201.0.0.zip).
+
 Ant is currently a Windows-only program.
 
 Ant is distributed under an MIT license.  See LICENSE file for details.

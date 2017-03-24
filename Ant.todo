@@ -104,13 +104,14 @@ ANT Notes:
     * Use regex.
 + Rearrange code to put events in single place.
 + Make bracket convention consistent.
-> Create documentation.
++ Create documentation.
     + In-code for MainWindow.
-> Create executable installer.
-> Test on Win7 machine.
++ Create executable installer.
+- Test on Win7 machine.
+    * Too aggravating to use Win7.
 > Create end-user documentation in README.md.
     > Give direct link to install executable.
-    > Explanation of how to use it.
+    + Explanation of how to use it.
     > Link to YouTube video explaining how to use it.
         * Will need to actually make video.
 > Future additions.
