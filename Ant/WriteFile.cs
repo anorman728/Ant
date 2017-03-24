@@ -43,6 +43,10 @@ namespace Ant
             if (!File.Exists(this.filePath))
             {
                 File.Create(this.filePath).Dispose();
+                using (StreamWriter sw = File.AppendText(this.filePath))
+                {
+                    sw.Write("Ant Log:");
+                }
             }
         }
 
