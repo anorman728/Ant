@@ -72,8 +72,8 @@ namespace Ant
 
         public HourMinuteAMPM startHM()
         {
-            String hourDum = this.startHourComboBox.Text;
-            String minuteDum = this.startMinuteComboBox.Text;
+            String hourDum = this.startHourNumericUpDown.Value.ToString();
+            String minuteDum = String.Format("{0:00}",this.startMinuteNumericUpDown.Value);
             String ampmDum = this.startAMPMComboBox.Text;
             HourMinuteAMPM returnVal = new HourMinuteAMPM(hourDum+":"+minuteDum+" "+ampmDum);
             return returnVal;
@@ -89,8 +89,8 @@ namespace Ant
 
         public HourMinuteAMPM endHM()
         {
-            String hourDum = this.endHourComboBox.Text;
-            String minuteDum = this.endMinuteComboBox.Text;
+            String hourDum = this.endHourNumericUpDown.Value.ToString();
+            String minuteDum = String.Format("{0:00}",this.endMinuteNumericUpDown.Value);
             String ampmDum = this.endAMPMComboBox.Text;
             HourMinuteAMPM returnVal = new HourMinuteAMPM(hourDum+":"+minuteDum+" "+ampmDum);
             return returnVal;

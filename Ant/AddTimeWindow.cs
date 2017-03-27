@@ -14,14 +14,30 @@ namespace Ant {
 
         private MainWindow mainWin;
 
+        /* Events */
+
+            private void AddTimeWindow_KeyUp(object sender, KeyEventArgs e)
+            {
+                this.keyEvent(e);
+            }
+
+            private void OKButton_Click(object sender, EventArgs e) {
+                this.addEnteredTime();
+            }
+
+            private void cancelButton_Click(object sender, EventArgs e)
+            {
+                this.Close();
+            }
+
         public AddTimeWindow(MainWindow mainWinDum) {
             this.mainWin = mainWinDum;
             InitializeComponent();
         }
 
         private void addEnteredTime() {
-            String hour = this.hourComboBox.Text;
-            String minute = this.minuteComboBox.Text;
+            String hour = this.hourNumericUpDown.Value.ToString();
+            String minute = String.Format("{0:00}",this.minuteNumericUpDown.Value);
             String ampm = this.AMPMComboBox.Text;
             this.mainWin.addTime(hour, minute, ampm);
             this.Close();
@@ -36,27 +52,6 @@ namespace Ant {
                     this.Close();
                     break;
             }
-        }
-
-        private void hourComboBox_KeyUp(object sender, KeyEventArgs e) {
-            this.keyEvent(e);
-        }
-
-        private void minuteComboBox_KeyUp(object sender, KeyEventArgs e) {
-            this.keyEvent(e);
-        }
-
-        private void AMPMComboBox_KeyUp(object sender, KeyEventArgs e) {
-            this.keyEvent(e);
-        }
-
-        private void OKButton_Click(object sender, EventArgs e) {
-            this.addEnteredTime();
-        }
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         
     }

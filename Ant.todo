@@ -127,8 +127,23 @@ ANT Notes:
         * Thought I fixed it, but it's still doing it.
             * Now it's done.
     + Fix buttons not being grayed out when starting.
-    > Update droplists to make it more keyboard-friendly.
+    + Update droplists to make it more keyboard-friendly.
         * Probably just use numericupdowns.
+        + AddTimeWindow
+            + Replace with numericupdowns.
+            + Enable keypreview.
+            + Make first field default.
+            + Default to AM
+            - Format string to 0:00
+                * Doesn't seem to be possible with numericupdown.
+            + See if can add max to numericUpDown to top out hour and minute.
+            - See if can get it to scroll back from 0 to 59.
+                * Not worth the effort.
+        + AddMultipleTimesWindow
+            + Replace numeric dropdowns with numericupdowns
+                + Top out hour amd minute
+            + Review TabIndex on each control.
+            + Default to AM.
     > Multiple inputs options.
         * This will mean creating a new window instead of just using the inputbox function.
     > Make it less intrusive, less demanding of attention.
