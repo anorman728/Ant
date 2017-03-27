@@ -72,6 +72,11 @@ namespace Ant {
                 winDum.Show();
             }
 
+            private void clearAllTimesButton_Click(object sender, EventArgs e)
+            {
+                this.clearAllTimes();
+            }
+
         /**
          * Add time to timesListBox.
          *
@@ -293,5 +298,17 @@ namespace Ant {
             }
         }
 
+        /**
+           Clear all times in the listbox.
+         */
+
+        public void clearAllTimes()
+        {
+            String yesno = Interaction.MsgBox("Clear all times.  Are you sure?",MsgBoxStyle.YesNo).ToString();
+            if (yesno == "Yes")
+            {
+                this.timesListBox.Items.Clear();
+            }
+        }
     }
 }

@@ -40,6 +40,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addMultipleTimeButton = new System.Windows.Forms.Button();
+            this.clearAllTimesButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,11 +188,23 @@
             this.addMultipleTimeButton.UseVisualStyleBackColor = true;
             this.addMultipleTimeButton.Click += new System.EventHandler(this.addMultipleTimeButton_Click);
             // 
+            // clearAllTimesButton
+            // 
+            this.clearAllTimesButton.Location = new System.Drawing.Point(453, 214);
+            this.clearAllTimesButton.Margin = new System.Windows.Forms.Padding(4);
+            this.clearAllTimesButton.Name = "clearAllTimesButton";
+            this.clearAllTimesButton.Size = new System.Drawing.Size(152, 44);
+            this.clearAllTimesButton.TabIndex = 12;
+            this.clearAllTimesButton.Text = "Clear All Times";
+            this.clearAllTimesButton.UseVisualStyleBackColor = true;
+            this.clearAllTimesButton.Click += new System.EventHandler(this.clearAllTimesButton_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 492);
+            this.Controls.Add(this.clearAllTimesButton);
             this.Controls.Add(this.addMultipleTimeButton);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
@@ -233,6 +246,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button addMultipleTimeButton;
+        private System.Windows.Forms.Button clearAllTimesButton;
     }
 }
 

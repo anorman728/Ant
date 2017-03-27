@@ -379,7 +379,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown intervalNumericUpDown;
         private System.Windows.Forms.Button okayButton;
-        private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.Button cancelButton;
     }
 }
