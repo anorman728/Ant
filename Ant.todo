@@ -120,10 +120,15 @@ ANT Notes:
         + AddMultipleTimesWindow class.
         + Documentation for AddMultipleTimesWindow class.
     + Button to clear all current prompt times.
-    > Do something about the blank values being added to listbox.
+    + Error-handling if file is not readable.
+        * Need to do this on a per-prompt basis, not for just starting the prompt manager.
+    + Do something about the blank values being added to listbox.
         * Probably just a workaround to refuse to add if it's blank.
-    > Error-handling if file is not readable.
-        * Need to do this on a per-prompt basis, not for a starting the prompt manager.
+        * Thought I fixed it, but it's still doing it.
+            * Now it's done.
+    > Fix buttons not being grayed out when starting.
+    > Update droplists to make it more keyboard-friendly.
+        * Probably just use numericupdowns.
     > Multiple inputs options.
         * This will mean creating a new window instead of just using the inputbox function.
     > Make it less intrusive, less demanding of attention.

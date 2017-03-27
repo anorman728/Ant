@@ -101,7 +101,11 @@ namespace Ant {
 
         public void addTimeRaw(String inputStr)
         {
-            this.timesListBox.Items.Add(inputStr);
+            if (!inputStr.Equals(""))
+            {
+                this.timesListBox.Items.Add(inputStr);
+                this.cleanTimesListBox();
+            }
         }
 
         /**
@@ -251,7 +255,24 @@ namespace Ant {
             int len = dumArr.Length;
             for (int i=0;i<len;i++)
             {
-                this.timesListBox.Items.Add(dumArr[i]);
+                this.addTimeRaw(dumArr[i]);
+            }
+        }
+        /**
+         * Remove all blank entries from timesListBox.
+         *
+         *@access   Public
+         */
+
+        private void cleanTimesListBox()
+        {
+            int len = timesListBox.Items.Count;
+            for (int i=len-1;i>=0;i--)
+            {
+                if (timesListBox.Items[i].ToString().Trim().Equals(""))
+                {
+                    timesListBox.Items.Remove(timesListBox.Items[i]);
+                }
             }
         }
 
