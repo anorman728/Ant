@@ -114,8 +114,12 @@ ANT Notes:
     + Explanation of how to use it.
     > Link to YouTube video explaining how to use it.
         * Will need to actually make video.
-> Future additions.
-    > Button to populate Prompt Times based on intervals in a timeframe.
+> 1.1.0 additions.
+    + Button to populate Prompt Times based on intervals in a timeframe.
+        + Populate times method for MainWindow.
+        + AddMultipleTimesWindow class.
+        + Documentation for AddMultipleTimesWindow class.
+    > Button to clear all current prompt times.
     > Minimize to systray.
     > Error-handling if file is not readable.
         * Need to do this on a per-prompt basis, not for a starting the prompt manager.
@@ -126,3 +130,5 @@ ANT Notes:
         * Need to figure out if there's a way to make it scroll up from systray.
             * May already exist, but may need to actually create this.
     > Add headers instead of just "Ant Log" title.
+> 1.2.0 additions.
+    > Multi-select for deleting times in Prompt Times listbox.

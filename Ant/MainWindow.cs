@@ -15,6 +15,7 @@ namespace Ant {
     public partial class MainWindow : Form {
 
         private PromptManager promptManagerObj;
+        private Regex timeRgx = new Regex(@"^\d{1,2}:\d{2} (AM|PM)$",RegexOptions.IgnoreCase);
 
         public MainWindow() {
             InitializeComponent();
@@ -26,6 +27,12 @@ namespace Ant {
             private void addTimeButton_Click(object sender, EventArgs e) 
             {
                 AddTimeWindow winDum = new AddTimeWindow(this);
+                winDum.Show();
+            }
+
+            private void addMultipleTimeButton_Click(object sender, EventArgs e)
+            {
+                AddMultipleTimesWindow winDum = new AddMultipleTimesWindow(this);
                 winDum.Show();
             }
 
@@ -77,7 +84,19 @@ namespace Ant {
         public void addTime(String hour,String minute,String ampm) 
         {
             String timeToAdd = hour + ":" + minute + " " + ampm;
-            this.timesListBox.Items.Add(timeToAdd);
+            this.addTimeRaw(timeToAdd);
+        }
+
+        /**
+         * Add string to timesListBox just as it is.
+         *
+         *@access   Public
+         *@param    String  inputStr
+         */
+
+        public void addTimeRaw(String inputStr)
+        {
+            this.timesListBox.Items.Add(inputStr);
         }
 
         /**
@@ -241,14 +260,38 @@ namespace Ant {
 
         public bool checkTimes()
         {
-            Regex rgx = new Regex(@"^\d{1,2}:\d{2} (AM|PM)$",RegexOptions.IgnoreCase);
             bool returnVal = true; // Assume true until found otherwise.
             int cnt = this.timesListBox.Items.Count;
             for (int i=0; i < cnt; i++){
                 String dumStr = this.timesListBox.Items[i].ToString();
-                if (!rgx.IsMatch(dumStr)) returnVal = false;
+                if (!this.timeRgx.IsMatch(dumStr)) returnVal = false;
             }
             return returnVal;
         }
+
+        /**
+         * Populate timesListBox with multiple values within an interval based
+         * on a subinterval value.
+         *
+         *@access   Public
+         *@param    HourMinuteAMPM  startTime
+         *@param    HourMinuteAMPM  endTime
+         *@param    int             intervalMinutes
+         */
+
+        public void populateTimesListBoxIntervals(HourMinuteAMPM startTime, HourMinuteAMPM endTime, int intervalMinutes)
+        {
+            HourMinuteAMPM dumTimeHM;
+            int startTimeInt = startTime.getTimeInt();
+            int endTimeInt = endTime.getTimeInt();
+
+            for (int timeInd = startTimeInt;timeInd<=endTimeInt;timeInd+=intervalMinutes)
+            {
+                dumTimeHM = new HourMinuteAMPM(timeInd);
+                this.addTimeRaw(dumTimeHM.getTime());
+                dumTimeHM = null;
+            }
+        }
+
     }
 }

@@ -85,6 +85,12 @@
     <Compile Include="aboutWindow.Designer.cs">
       <DependentUpon>aboutWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddMultipleTimesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMultipleTimesWindow.Designer.cs">
+      <DependentUpon>AddMultipleTimesWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTimeWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <Compile Include="WriteFile.cs" />
     <EmbeddedResource Include="aboutWindow.resx">
       <DependentUpon>aboutWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMultipleTimesWindow.resx">
+      <DependentUpon>AddMultipleTimesWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTimeWindow.resx">
       <DependentUpon>AddTimeWindow.cs</DependentUpon>

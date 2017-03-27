@@ -39,6 +39,7 @@
             this.onlineDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addMultipleTimeButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // 
             // addTimeButton
             // 
-            this.addTimeButton.Location = new System.Drawing.Point(457, 58);
+            this.addTimeButton.Location = new System.Drawing.Point(453, 58);
             this.addTimeButton.Margin = new System.Windows.Forms.Padding(4);
             this.addTimeButton.Name = "addTimeButton";
             this.addTimeButton.Size = new System.Drawing.Size(152, 44);
@@ -75,7 +76,7 @@
             // 
             // deleteSelectedTimeButton
             // 
-            this.deleteSelectedTimeButton.Location = new System.Drawing.Point(457, 109);
+            this.deleteSelectedTimeButton.Location = new System.Drawing.Point(453, 162);
             this.deleteSelectedTimeButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteSelectedTimeButton.Name = "deleteSelectedTimeButton";
             this.deleteSelectedTimeButton.Size = new System.Drawing.Size(152, 44);
@@ -175,11 +176,23 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(67, 4);
             // 
+            // addMultipleTimeButton
+            // 
+            this.addMultipleTimeButton.Location = new System.Drawing.Point(453, 110);
+            this.addMultipleTimeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.addMultipleTimeButton.Name = "addMultipleTimeButton";
+            this.addMultipleTimeButton.Size = new System.Drawing.Size(152, 44);
+            this.addMultipleTimeButton.TabIndex = 11;
+            this.addMultipleTimeButton.Text = "Add Multiple Times";
+            this.addMultipleTimeButton.UseVisualStyleBackColor = true;
+            this.addMultipleTimeButton.Click += new System.EventHandler(this.addMultipleTimeButton_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 492);
+            this.Controls.Add(this.addMultipleTimeButton);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.browseButton);
@@ -219,6 +232,7 @@
         private System.Windows.Forms.ToolStripMenuItem onlineDocumentationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button addMultipleTimeButton;
     }
 }
 

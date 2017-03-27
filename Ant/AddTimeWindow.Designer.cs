@@ -34,6 +34,7 @@
             // 
             // hourComboBox
             // 
+            this.hourComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.hourComboBox.FormattingEnabled = true;
             this.hourComboBox.Items.AddRange(new object[] {
             "1",
@@ -53,7 +54,6 @@
             this.hourComboBox.Name = "hourComboBox";
             this.hourComboBox.Size = new System.Drawing.Size(63, 24);
             this.hourComboBox.TabIndex = 0;
-            this.hourComboBox.Text = "12";
             this.hourComboBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.hourComboBox_KeyUp);
             // 
             // colonLabel
@@ -68,6 +68,7 @@
             // 
             // minuteComboBox
             // 
+            this.minuteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.minuteComboBox.FormattingEnabled = true;
             this.minuteComboBox.Items.AddRange(new object[] {
             "00",
@@ -135,11 +136,11 @@
             this.minuteComboBox.Name = "minuteComboBox";
             this.minuteComboBox.Size = new System.Drawing.Size(63, 24);
             this.minuteComboBox.TabIndex = 2;
-            this.minuteComboBox.Text = "00";
             this.minuteComboBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.minuteComboBox_KeyUp);
             // 
             // AMPMComboBox
             // 
+            this.AMPMComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AMPMComboBox.FormattingEnabled = true;
             this.AMPMComboBox.Items.AddRange(new object[] {
             "AM",
@@ -149,7 +150,6 @@
             this.AMPMComboBox.Name = "AMPMComboBox";
             this.AMPMComboBox.Size = new System.Drawing.Size(63, 24);
             this.AMPMComboBox.TabIndex = 3;
-            this.AMPMComboBox.Text = "AM";
             this.AMPMComboBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.AMPMComboBox_KeyUp);
             // 
             // OKButton

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Ant
 {
@@ -8,90 +9,109 @@ namespace Ant
 
 	public class HourMinuteAMPM
 	{
-        private int hour;
-        private int minute;
-        private String ampm;
+        private int timeInt;
 
         /**
          * Constructor.
          *
          *@access   Public
-         *@param    String      inputTime   In format "HH:mm".
+         *@param    String                      inputTime   In format "HH:mm
+         *                                                  am/pm".
+         *@throws   System.ArgumentException                If inputTime doesn't
+         *                                                  match "HH:mm am/pm"
+         *                                                  format.
          */
 
 		public HourMinuteAMPM (String inputTime)
 		{
-            char[] splitArr = {':',' '};
-            String[] dumArr = inputTime.Split(splitArr);
-
             /* Exceptions */
-                if (dumArr.Length != 3)
+                Regex timeRgx = new Regex(@"^\d{1,2}:\d{2} (AM|PM)$",RegexOptions.IgnoreCase);
+                if (!timeRgx.IsMatch(inputTime))
                 {
-                    throw new ArgumentException("Parameter must be in form \"HH:mm AM/PM\".","inputTime");
-                }
-                int n;
-                if (!(int.TryParse(dumArr[0], out n)))
-                {
-                    throw new ArgumentException("Hour must be integer.  Found "+dumArr[0]+".");
-                }
-                if (!(int.TryParse(dumArr[1], out n)))
-                {
-                    throw new ArgumentException("Minute must be integer.  Found "+dumArr[1]+".");
+                    throw new System.ArgumentException("Parameter must be in a \"HH:mm AM/PM\" format.","inputTime");
                 }
 
-//            this.setHour((int) dumArr[0]);
-			this.setHour(Int32.Parse(dumArr[0]));
-//            this.setMinute((int) dumArr[1]);
-			this.setMinute(Int32.Parse(dumArr[1]));
-            this.setAMPM(dumArr[2]);
-
-            splitArr = null;
-            dumArr = null;
+            this.setTimeInt(this.strToInt(inputTime));
 		}
+
+        /**
+         * Constructor.
+         *
+         *@access   Pulic
+         *@param    int     inputTimeInt
+         */
+
+        public HourMinuteAMPM (int inputTimeInt)
+        {
+            this.setTimeInt(inputTimeInt);
+        }
 
         /* Getters and setters. */
             
-            public void setHour(int inputHour)
-            {
-                this.hour = inputHour;
-            }
-
             public int getHour()
             {
-                return this.hour;
-            }
-
-            public void setMinute(int inputMinute)
-            {
-                this.minute = inputMinute;
+                int returnVal = this.timeInt / 60;
+                if (returnVal == 0){
+                    returnVal = 12;
+                } else if (returnVal > 12){
+                    returnVal = returnVal - 12;
+                }
+                return returnVal;
             }
 
             public int getMinute()
             {
-                return this.minute;
-            }
-
-            /**
-             * Setter for ampm.
-             *
-             *@access   Public
-             *@param    String              inputAMPM
-             *@throws   ArgumentException   If inputAMPM is neither "am" nor
-             *                              "pm" (case insensitive).
-             */
-
-            public void setAMPM(String inputAMPM)
-            {
-                /* Exceptions */
-                    if (!inputAMPM.Equals("am",StringComparison.OrdinalIgnoreCase) && !inputAMPM.Equals("pm",StringComparison.OrdinalIgnoreCase)){
-                        throw new ArgumentException("Parameter must be \"am\" or \"pm\" (case insensitive).", "inputAMPM");
-                    }
-                this.ampm = inputAMPM.ToUpper();
+                int returnVal = this.timeInt % 60;
+                return returnVal;
             }
 
             public String getAMPM()
             {
-                return this.ampm;
+                String returnVal;
+                if (this.timeInt >= 12*60)
+                {
+                    returnVal = "PM";
+                }
+                else
+                {
+                    returnVal = "AM";
+                }
+                return returnVal;
+            }
+
+            /**
+             * Set timeInt.
+             *
+             *@access   Public
+             */
+
+            public void setTimeInt(int inputTimeInt)
+            {
+                this.timeInt = inputTimeInt;
+            }
+
+            /**
+             * Get integer representation of time (i.e., minutes from midnight).
+             *
+             *@return   int
+             */
+
+            public int getTimeInt()
+            {
+                return this.timeInt;
+            }
+
+            /**
+             * Get time in string format.
+             *
+             *@access   Public
+             *@return   String
+             */
+
+            public String getTime()
+            {
+                String returnStr = (this.getHour().ToString()) + ":" + (String.Format("{0:00}",this.getMinute())) + " " + this.getAMPM();
+                return returnStr;
             }
 
         /**
@@ -106,8 +126,40 @@ namespace Ant
 
         public bool isMatch(DateTime inputDT)
         {
-			String testStr = (this.hour.ToString()) + ":" + (String.Format("{0:00}",this.minute)) + " " + this.ampm;
+			String testStr = this.getTime();
 			return testStr.Equals(inputDT.ToString("t"));
+        }
+
+        /**
+         * Convert "HH:mm am/pm" string to minutes since midnight.
+         *
+         *@access   Private
+         *@param    String      inputStr
+         *@return   int
+         */
+
+        private int strToInt(String inputStr)
+        {
+            char[] splitArr = {':',' '};
+            String[] dumArr = inputStr.Split(splitArr);
+
+            int dumHour = Int32.Parse(dumArr[0]);
+            int dumMinute = Int32.Parse(dumArr[1]);
+            String dumAMPM = dumArr[2];
+
+            splitArr = null;
+            dumArr = null;
+
+            if (dumAMPM.Equals("am",StringComparison.OrdinalIgnoreCase) && dumHour==12)
+            {
+                dumHour = 0;
+            }
+            else if (dumAMPM.Equals("pm",StringComparison.OrdinalIgnoreCase) && dumHour!=12)
+            {
+                dumHour = dumHour + 12;
+            }
+            int dumTimeInt = dumHour*60 + dumMinute;
+            return dumTimeInt;
         }
 	}
 }
