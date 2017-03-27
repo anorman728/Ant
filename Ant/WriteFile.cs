@@ -43,10 +43,7 @@ namespace Ant
             if (!File.Exists(this.filePath))
             {
                 File.Create(this.filePath).Dispose();
-                using (StreamWriter sw = File.AppendText(this.filePath))
-                {
-                    sw.Write("Ant Log:");
-                }
+                this.writeToFile("Ant Log:");
             }
         }
 
@@ -59,10 +56,20 @@ namespace Ant
         public void writeDatetime()
         {
             this.touch();
-			using (StreamWriter sw = File.AppendText(this.filePath))
+            DateTime currentTime = DateTime.Now;
+            this.writeToFile("\r\n"+currentTime);
+        }
+
+        private void writeToFile(String message)
+        {
+            try{
+                using(StreamWriter sw = File.AppendText(this.filePath))
+                {
+                    sw.Write(message);
+                }
+            } catch (System.IO.IOException)
             {
-                DateTime currentTime = DateTime.Now;
-                sw.Write("\r\n"+currentTime);
+                Microsoft.VisualBasic.Interaction.MsgBox("Unable to write to "+this.filePath+".  Is it open in another program?");
             }
         }
 
@@ -76,11 +83,8 @@ namespace Ant
         public void writeMessage(String message)
         {
             this.touch();
-            using (StreamWriter sw = File.AppendText(this.filePath))
-            {
-                String dumStr = message.Replace("\"","''");
-                sw.Write(",\"{0}\"",dumStr);
-            }
+            String dumStr = message.Replace("\"","''");
+            this.writeToFile(",\""+dumStr+"\"");
         }
 
 	}
