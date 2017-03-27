@@ -157,6 +157,8 @@ namespace Ant {
                     this.browseButton.Enabled               = false;
                     this.fileNameTextBox.Enabled            = false;
                     this.timesListBox.Enabled               = false;
+                    this.addMultipleTimeButton.Enabled      = false;
+                    this.clearAllTimesButton.Enabled        = false;
                 /* Enable elements */
                     this.stopButton.Enabled = true;
             
@@ -186,6 +188,8 @@ namespace Ant {
                 this.browseButton.Enabled               = true;
                 this.fileNameTextBox.Enabled            = true;
                 this.timesListBox.Enabled               = true;
+                this.addMultipleTimeButton.Enabled      = true;
+                this.clearAllTimesButton.Enabled        = true;
             /* Enable elements */
                 this.stopButton.Enabled = false;
 
