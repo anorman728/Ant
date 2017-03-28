@@ -267,6 +267,7 @@ namespace Ant {
                 this.addTimeRaw(dumArr[i]);
             }
         }
+
         /**
          * Remove all blank entries from timesListBox.
          *
@@ -329,7 +330,9 @@ namespace Ant {
         }
 
         /**
-           Clear all times in the listbox.
+         * Clear all times in the listbox.
+         *
+         *@access   Public
          */
 
         public void clearAllTimes()
@@ -340,6 +343,10 @@ namespace Ant {
                 this.timesListBox.Items.Clear();
             }
         }
+
+        /**
+           Delete before release.
+         */
 
         private void debugToolStripMenuItem_Click(object sender, EventArgs e)
         {

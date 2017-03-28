@@ -68,6 +68,14 @@ namespace Ant
                 this.selectAllNumericUpDown(this.intervalNumericUpDown);
             }
 
+        /**
+         * More initialization actions to determine window's contents.  This is
+         * in a secondary function instead of part of InitializeComponent because
+         * the latter can be rewritten by the designer.
+         *
+         *@access   Private
+         */
+
         private void secondaryInitialize()
         {
             this.startAMPMComboBox.SelectedIndex = 0;
@@ -75,10 +83,10 @@ namespace Ant
         }
 
         /**
-         * Handler for keyUp event in this window.
+         * Handle keyUp events by calling handlers for submit and cancel events.
          *
          *@access   Private
-         *@param    Object      e       KeyEventArgs
+         *@param    KeyEventArgs    e
          */
 
         private void keyUpEvent(KeyEventArgs e)
@@ -156,6 +164,14 @@ namespace Ant
         {
             this.Close();
         }
+
+        /**
+         * Handle the Enter event for NumericUpDown objects by selecting all of
+         * the text.
+         *
+         *@access   Private
+         *@param    NumericUpDown   inputObj
+         */
 
         private void selectAllNumericUpDown(NumericUpDown inputObj)
         {

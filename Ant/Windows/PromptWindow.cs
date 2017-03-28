@@ -32,6 +32,13 @@ namespace Ant.Windows
                 this.keyUpEvent(e);
             }
 
+        /**
+         * Create the input textboxes in the window.
+         *
+         *@access   Private
+         *@param    int         numOfFields
+         */
+
         private void createTextBoxes(int numOfFields)
         {
             this.inputFields = new System.Windows.Forms.TextBox[numOfFields];
@@ -47,6 +54,13 @@ namespace Ant.Windows
             this.SetClientSizeCore(500,80+numOfFields*32);
         }
 
+        /**
+         * Handle keyUp events by calling submit or cancel events.
+         *
+         *@access   Private
+         *@param    KeyEventArgs    e
+         */
+
         private void keyUpEvent(KeyEventArgs e)
         {
             switch(e.KeyCode.ToString())
@@ -60,6 +74,14 @@ namespace Ant.Windows
             }
         }
 
+        /**
+         * Write messages to file, let promptManagerObj know that it's done, and
+         * close window.
+         * This is the submit event.
+         *
+         *@access   Private
+         */
+
         private void writeMessages()
         {
             String[] dumArr = this.getMessages();
@@ -68,6 +90,12 @@ namespace Ant.Windows
             this.promptManagerObj.setIsUp(false);
             this.Close();
         }
+
+        /**
+         * Collect the messages from the textboxes into an array.
+         *
+         *@access   Public
+         */
 
         public String[] getMessages()
         {
@@ -79,6 +107,12 @@ namespace Ant.Windows
             }
             return returnArr;
         }
+
+        /**
+         * Handle canceling.
+         *
+         *@access   Private
+         */
 
         private void cancelAction()
         {

@@ -48,7 +48,6 @@
             this.label1.Text = "Ant v. 1.0.0\r\n\r\nAnt = \r\n\r\n    Andrew\r\n    Norman\'s\r\n    Timelogger\r\n\r\nAnt is open" +
     " source and distributed under an MIT license.\r\n\r\nVisit the following site for de" +
     "tails:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // licenseLink
             // 

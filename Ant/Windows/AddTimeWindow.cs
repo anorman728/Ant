@@ -46,10 +46,24 @@ namespace Ant {
             this.secondaryInitialize();
         }
 
+        /**
+         * Secondary initialization actions to define contents of window-- Not
+         * defined in InitializeComponent because the designer can rewrite that.
+         *
+         *@access   Private
+         */
+
         private void secondaryInitialize()
         {
             this.AMPMComboBox.SelectedIndex = 0;
         }
+
+        /**
+         * Handle submit event by adding the entered time to the main window and
+         * closing the window.
+         *
+         *@access   Private
+         */
 
         private void addEnteredTime() {
             String hour = this.hourNumericUpDown.Value.ToString();
@@ -58,6 +72,13 @@ namespace Ant {
             this.mainWin.addTime(hour, minute, ampm);
             this.Close();
         }
+
+        /**
+         * Handle keypress event by calling submit or cancel handlers.
+         *
+         *@access   Private
+         *@param    KeyEventArgs    e       Determined by keyUp events.
+         */
 
         private void keyEvent(KeyEventArgs e){
             switch (e.KeyCode.ToString()){
@@ -69,6 +90,13 @@ namespace Ant {
                     break;
             }
         }
+
+        /**
+         * Handle NumericUpDowns' Enter event by selecting all of its text.
+         *
+         *@access   Private
+         *@param    NumericUpDown   inputObj
+         */
 
         private void selectAllNumericUpDown(NumericUpDown inputObj)
         {

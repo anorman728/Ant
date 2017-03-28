@@ -33,9 +33,5 @@ namespace Ant
             Process.Start(this.devPageLink.Text.ToString());
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

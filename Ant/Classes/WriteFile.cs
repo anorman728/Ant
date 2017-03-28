@@ -105,10 +105,10 @@ namespace Ant
         }
 
         /**
-           Write multiple messages to last line in file.
-
-          @access   Public
-          @param    String[]    messages
+         * Write multiple messages to last line in file.
+         *
+         *@access   Public
+         *@param    String[]    messages
          */
 
         public void writeMessages(String[] messages)
