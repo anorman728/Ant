@@ -43,6 +43,7 @@
             this.clearAllTimesButton = new System.Windows.Forms.Button();
             this.numberOfFieldsLabel = new System.Windows.Forms.Label();
             this.numberOfFieldsNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfFieldsNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -144,7 +145,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.debugToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(618, 28);
@@ -234,6 +236,13 @@
             0,
             0});
             // 
+            // debugToolStripMenuItem
+            // 
+            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.debugToolStripMenuItem.Text = "Debug";
+            this.debugToolStripMenuItem.Click += new System.EventHandler(this.debugToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -287,6 +296,7 @@
         private System.Windows.Forms.Button clearAllTimesButton;
         private System.Windows.Forms.Label numberOfFieldsLabel;
         private System.Windows.Forms.NumericUpDown numberOfFieldsNumericUpDown;
+        private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
     }
 }
 

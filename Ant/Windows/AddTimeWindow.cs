@@ -33,6 +33,7 @@ namespace Ant {
         public AddTimeWindow(MainWindow mainWinDum) {
             this.mainWin = mainWinDum;
             InitializeComponent();
+            this.AMPMComboBox.SelectedIndex=0;
         }
 
         private void addEnteredTime() {

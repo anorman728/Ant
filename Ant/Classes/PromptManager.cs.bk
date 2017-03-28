@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
+using System.Timers;
+using Microsoft.VisualBasic;
 using System.Diagnostics;
 
 namespace Ant
@@ -74,8 +75,7 @@ namespace Ant
             this.createWriteFileObj(inputPath);
             this.createTimeArr(times);
 
-            this.timer = new Timer();
-            this.timer.Interval = 5000;
+            this.timer = new Timer(1000);
         }
 
         /**
@@ -86,7 +86,9 @@ namespace Ant
 
         public void startPrompting()
         {
-            this.timer.Tick += new EventHandler(promptIfInArray);
+            this.timer.Elapsed += promptIfInArray;
+            this.timer.AutoReset = true;
+            this.timer.Enabled = true;
             this.timer.Start();
         }
 
@@ -112,9 +114,9 @@ namespace Ant
          *@param    ElapsedEventArgs    e
          */
 
-		private void promptIfInArray(object source, EventArgs e)
+		private void promptIfInArray(object source, ElapsedEventArgs e)
         {
-            if (DateTime.Now.Second < 5){
+            if (DateTime.Now.Second == 0){
                 int len = this.timeArr.Length;
                 DateTime dumDT = DateTime.Now;
 

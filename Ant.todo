@@ -144,9 +144,45 @@ ANT Notes:
                 + Top out hour amd minute
             + Review TabIndex on each control.
             + Default to AM.
-    > Multiple inputs options.
+    + Multiple inputs options.
         * This will mean creating a new window instead of just using the inputbox function.
-    > Add headers instead of just "Ant Log" title.
+        + Create new window class.
+            * PromptWindow
+            + Build constructor with these parameters:
+                + numFields: Number of messages to display in box.
+                + writeFile object.
+            + Dynamically create the textboxes.
+                * Will need to be based on a priate property of the class.
+                * Create them in the form, then move that code from the designer file to constructor (after initialize).
+                * Modify said code in a loop to add multiple boxes.
+            + Dynamically expand window.
+            + KeyUp event:
+                + Call writeFile object's writeMessages method.
+                + Close window.
+        + Modify WriteFile class.
+            + numFields property.
+                + Create.
+                + Getters/setters.
+            + Update constructor.
+            + Update Touch to modify number of headers.
+        + Modify promptManager constructor.
+            + Create numFields property.
+        + Update promptManager.prompt to use PromptWindow class.
+            + Pass writeFile object and numFields to PromptWindow.
+        + Update MainWindow to pass "Number of Fields" to prompt manager.
+        + Window is unresponsive.
+            * When bring up window in debug, works fine.
+            * When bring up window as part of prompt manager, it's unresponsive.
+            * No error is thrown.
+            * Seems to make it through the constructor.
+            * The prompt method seems to work fine when not done through timer.
+            * Also need to test "prompt if in array" function.
+            * Current idea: Try the timer method from System.Windows.Forms.
+                * This fixed it.
+    + Add headers instead of just "Ant Log" title.
+        + Update "touch" to use the number of fields property.
+        * This ended up being part of previous point.
+    + Update Add Time window to default to AM.
     > Make it less intrusive, less demanding of attention.
         * Make this an option.
         * Need to figure out if there's a way to make it scroll up from systray.

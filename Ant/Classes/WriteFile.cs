@@ -7,6 +7,7 @@ namespace Ant
 	public class WriteFile
 	{
         private string filePath;
+        private int numFields;
 
         /* Getters and setters */
 
@@ -20,6 +21,16 @@ namespace Ant
                 return this.filePath;
             }
 
+            public void setNumFields(int inputNumFields)
+            {
+                this.numFields = inputNumFields;
+            }
+
+            public int getNumFields()
+            {
+                return this.numFields;
+            }
+
         /**
          * Constructor for WriteFile.
          *
@@ -27,9 +38,10 @@ namespace Ant
          *@param    String      inputPath       Path to use for CSV file.
          */
 
-		public WriteFile (String inputPath)
+		public WriteFile (String inputPath,int inputNumFields)
 		{
             this.setFilePath(inputPath);
+            this.setNumFields(inputNumFields);
 		}
 
         /**
@@ -43,7 +55,12 @@ namespace Ant
             if (!File.Exists(this.filePath))
             {
                 File.Create(this.filePath).Dispose();
-                this.writeToFile("Ant Log:");
+                String header = "Timestamp";
+                for (int i=1;i<=this.numFields;i++)
+                {
+                    header += ",Field "+i.ToString();
+                }
+                this.writeToFile(header);
             }
         }
 
@@ -85,6 +102,23 @@ namespace Ant
             this.touch();
             String dumStr = message.Replace("\"","''");
             this.writeToFile(",\""+dumStr+"\"");
+        }
+
+        /**
+           Write multiple messages to last line in file.
+
+          @access   Public
+          @param    String[]    messages
+         */
+
+        public void writeMessages(String[] messages)
+        {
+            this.touch();
+            int len = messages.Length;
+            for (int i=0;i<len;i++)
+            {
+                this.writeMessage(messages[i]);
+            }
         }
 
 	}

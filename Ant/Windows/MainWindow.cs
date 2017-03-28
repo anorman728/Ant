@@ -164,8 +164,9 @@ namespace Ant {
             
                 String fileName = this.fileNameTextBox.Text;
                 String timesStr = this.getTimes();
-                
-                this.promptManagerObj = new PromptManager(fileName, timesStr);
+                int numFields = (int) this.numberOfFieldsNumericUpDown.Value;
+
+                this.promptManagerObj = new PromptManager(fileName, timesStr,numFields);
 
                 this.promptManagerObj.startPrompting();
             } else {
@@ -338,6 +339,15 @@ namespace Ant {
             {
                 this.timesListBox.Items.Clear();
             }
+        }
+
+        private void debugToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Be sure to delete the Debug control before release.
+            int dumInt = 3;
+            String dumStr = "C:\\users\\anorm\\Desktop\\log.csv";
+            Windows.PromptWindow dumWin = new Windows.PromptWindow(dumInt,new WriteFile(dumStr,dumInt),new PromptManager(dumStr,"10:30 AM",dumInt));
+            dumWin.Show();
         }
     }
 }
