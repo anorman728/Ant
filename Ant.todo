@@ -146,11 +146,12 @@ ANT Notes:
             + Default to AM.
     > Multiple inputs options.
         * This will mean creating a new window instead of just using the inputbox function.
+    > Add headers instead of just "Ant Log" title.
     > Make it less intrusive, less demanding of attention.
         * Make this an option.
         * Need to figure out if there's a way to make it scroll up from systray.
             * May already exist, but may need to actually create this.
-    > Add headers instead of just "Ant Log" title.
+        ! It's possible that will need to put this off, and it's possible that this may not be realistic at all.
 > 1.2.0 additions.
     > Multi-select for deleting times in Prompt Times listbox.
     > Minimize to systray.

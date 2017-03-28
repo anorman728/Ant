@@ -46,5 +46,17 @@ namespace Ant.Properties {
                 this["fileNameTextBox"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public decimal numberOfFieldsNumericUpDown {
+            get {
+                return ((decimal)(this["numberOfFieldsNumericUpDown"]));
+            }
+            set {
+                this["numberOfFieldsNumericUpDown"] = value;
+            }
+        }
     }
 }
