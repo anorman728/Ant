@@ -24,8 +24,9 @@ namespace Ant.Windows
             this.createTextBoxes(numOfFields);
             this.writeFileObj = inputWriteFileObj;
             this.promptManagerObj = inputPromptManager;
+            this.PlaceLowerRight();
         }
-
+        
         /* Events */
             private void PromptWindow_KeyUp(object sender, KeyEventArgs e)
             {
@@ -51,7 +52,7 @@ namespace Ant.Windows
                 this.inputFields[i].TabIndex = i;
                 this.Controls.Add(this.inputFields[i]);
             }
-            this.SetClientSizeCore(500,80+numOfFields*32);
+            this.SetClientSizeCore(500, 80 + numOfFields * 32);
         }
 
         /**
@@ -119,5 +120,16 @@ namespace Ant.Windows
             this.promptManagerObj.setIsUp(false);
             this.Close();
         }
+
+        // Testing
+
+        private void PlaceLowerRight()
+        {
+            Screen mainScreen = Screen.AllScreens[0];
+            this.StartPosition = FormStartPosition.Manual;
+            this.Left = mainScreen.WorkingArea.Right - this.Width;
+            this.Top = mainScreen.WorkingArea.Bottom - this.Height;
+        }
+        
     }
 }

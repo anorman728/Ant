@@ -186,11 +186,20 @@ ANT Notes:
     + Highlight entire number on numericupdowns.
         * This makes it a little more keyboard friendly.
     + Review documentation.
-    > Make it less intrusive, less demanding of attention.
+    + Make it less intrusive, less demanding of attention.
         * Make this an option.
         * Need to figure out if there's a way to make it scroll up from systray.
             * May already exist, but may need to actually create this.
         ! It's possible that will need to put this off, and it's possible that this may not be realistic at all.
+        * What it needs to do:
+            + Lower-right corner.
+            + Always on top.
+                * Topmost property.
+            - Doesn't take focus.
+                * Combining this with topmost is possible, but will take time to find out.  Not worth doing at present, especially since I don't even like it.
+    > Release
+        > Create zip file with install files.
+    > Update README.md.
 > 1.2.0 additions.
     > Multi-select for deleting times in Prompt Times listbox.
     > Minimize to systray.

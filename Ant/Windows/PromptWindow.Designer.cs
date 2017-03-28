@@ -53,6 +53,7 @@
             this.KeyPreview = true;
             this.Name = "PromptWindow";
             this.Text = "Ant Prompt";
+            this.TopMost = true;
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PromptWindow_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
