@@ -83,6 +83,7 @@
             this.intervalNumericUpDown.Name = "intervalNumericUpDown";
             this.intervalNumericUpDown.Size = new System.Drawing.Size(144, 22);
             this.intervalNumericUpDown.TabIndex = 6;
+            this.intervalNumericUpDown.Enter += new System.EventHandler(this.intervalNumericUpDown_Enter);
             // 
             // okayButton
             // 
@@ -115,6 +116,7 @@
             this.startMinuteNumericUpDown.Name = "startMinuteNumericUpDown";
             this.startMinuteNumericUpDown.Size = new System.Drawing.Size(63, 22);
             this.startMinuteNumericUpDown.TabIndex = 1;
+            this.startMinuteNumericUpDown.Enter += new System.EventHandler(this.startMinuteNumericUpDown_Enter);
             // 
             // startHourNumericUpDown
             // 
@@ -137,6 +139,7 @@
             0,
             0,
             0});
+            this.startHourNumericUpDown.Enter += new System.EventHandler(this.startHourNumericUpDown_Enter);
             // 
             // startAMPMComboBox
             // 
@@ -150,7 +153,6 @@
             this.startAMPMComboBox.Name = "startAMPMComboBox";
             this.startAMPMComboBox.Size = new System.Drawing.Size(63, 24);
             this.startAMPMComboBox.TabIndex = 2;
-            this.startAMPMComboBox.SelectedItem = this.startAMPMComboBox.Items[0];
             // 
             // label3
             // 
@@ -173,6 +175,7 @@
             this.endMinuteNumericUpDown.Name = "endMinuteNumericUpDown";
             this.endMinuteNumericUpDown.Size = new System.Drawing.Size(63, 22);
             this.endMinuteNumericUpDown.TabIndex = 4;
+            this.endMinuteNumericUpDown.Enter += new System.EventHandler(this.endMinuteNumericUpDown_Enter);
             // 
             // endHourNumericUpDown
             // 
@@ -195,6 +198,7 @@
             0,
             0,
             0});
+            this.endHourNumericUpDown.Enter += new System.EventHandler(this.endHourNumericUpDown_Enter);
             // 
             // endAMPMComboBox
             // 
@@ -208,7 +212,6 @@
             this.endAMPMComboBox.Name = "endAMPMComboBox";
             this.endAMPMComboBox.Size = new System.Drawing.Size(63, 24);
             this.endAMPMComboBox.TabIndex = 5;
-            this.endAMPMComboBox.SelectedItem = this.endAMPMComboBox.Items[0];
             // 
             // label4
             // 

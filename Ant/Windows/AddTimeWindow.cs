@@ -30,10 +30,25 @@ namespace Ant {
                 this.Close();
             }
 
+            private void hourNumericUpDown_Enter(object sender, EventArgs e)
+            {
+                this.selectAllNumericUpDown(this.hourNumericUpDown);
+            }
+
+            private void minuteNumericUpDown_Enter(object sender, EventArgs e)
+            {
+                this.selectAllNumericUpDown(this.minuteNumericUpDown);
+            }
+
         public AddTimeWindow(MainWindow mainWinDum) {
             this.mainWin = mainWinDum;
             InitializeComponent();
-            this.AMPMComboBox.SelectedIndex=0;
+            this.secondaryInitialize();
+        }
+
+        private void secondaryInitialize()
+        {
+            this.AMPMComboBox.SelectedIndex = 0;
         }
 
         private void addEnteredTime() {
@@ -54,6 +69,12 @@ namespace Ant {
                     break;
             }
         }
-        
+
+        private void selectAllNumericUpDown(NumericUpDown inputObj)
+        {
+            inputObj.Select(0,inputObj.Text.Length);
+        }
+
+
     }
 }

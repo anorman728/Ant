@@ -183,6 +183,9 @@ ANT Notes:
         + Update "touch" to use the number of fields property.
         * This ended up being part of previous point.
     + Update Add Time window to default to AM.
+    + Highlight entire number on numericupdowns.
+        * This makes it a little more keyboard friendly.
+    > Review documentation.
     > Make it less intrusive, less demanding of attention.
         * Make this an option.
         * Need to figure out if there's a way to make it scroll up from systray.

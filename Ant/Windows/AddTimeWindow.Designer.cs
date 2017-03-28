@@ -100,6 +100,7 @@
             0,
             0,
             0});
+            this.hourNumericUpDown.Enter += new System.EventHandler(this.hourNumericUpDown_Enter);
             // 
             // minuteNumericUpDown
             // 
@@ -112,6 +113,7 @@
             this.minuteNumericUpDown.Name = "minuteNumericUpDown";
             this.minuteNumericUpDown.Size = new System.Drawing.Size(63, 22);
             this.minuteNumericUpDown.TabIndex = 1;
+            this.minuteNumericUpDown.Enter += new System.EventHandler(this.minuteNumericUpDown_Enter);
             // 
             // AddTimeWindow
             // 

@@ -19,6 +19,7 @@ namespace Ant
         {
             this.mainWin = mainWinDum;
             InitializeComponent();
+            this.secondaryInitialize();
         }
 
         /* Events */
@@ -41,6 +42,37 @@ namespace Ant
             {
                 this.CancelAction();
             }
+
+            private void startHourNumericUpDown_Enter(object sender, EventArgs e)
+            {
+                this.selectAllNumericUpDown(this.startHourNumericUpDown);
+            }
+
+            private void startMinuteNumericUpDown_Enter(object sender, EventArgs e)
+            {
+                this.selectAllNumericUpDown(this.startMinuteNumericUpDown);
+            }
+
+            private void endHourNumericUpDown_Enter(object sender, EventArgs e)
+            {
+                this.selectAllNumericUpDown(this.endHourNumericUpDown);
+            }
+
+            private void endMinuteNumericUpDown_Enter(object sender, EventArgs e)
+            {
+                this.selectAllNumericUpDown(this.endMinuteNumericUpDown);
+            }
+
+            private void intervalNumericUpDown_Enter(object sender, EventArgs e)
+            {
+                this.selectAllNumericUpDown(this.intervalNumericUpDown);
+            }
+
+        private void secondaryInitialize()
+        {
+            this.startAMPMComboBox.SelectedIndex = 0;
+            this.endAMPMComboBox.SelectedIndex = 0;
+        }
 
         /**
          * Handler for keyUp event in this window.
@@ -124,6 +156,12 @@ namespace Ant
         {
             this.Close();
         }
+
+        private void selectAllNumericUpDown(NumericUpDown inputObj)
+        {
+            inputObj.Select(0,inputObj.Text.Length);
+        }
+
 
     }
 }
