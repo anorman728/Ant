@@ -159,6 +159,7 @@ namespace Ant {
                     this.timesListBox.Enabled               = false;
                     this.addMultipleTimeButton.Enabled      = false;
                     this.clearAllTimesButton.Enabled        = false;
+                    this.numberOfFieldsNumericUpDown.Enabled= false;
                 /* Enable elements */
                     this.stopButton.Enabled = true;
             
@@ -191,6 +192,7 @@ namespace Ant {
                 this.timesListBox.Enabled               = true;
                 this.addMultipleTimeButton.Enabled      = true;
                 this.clearAllTimesButton.Enabled        = true;
+                this.numberOfFieldsNumericUpDown.Enabled= true;
             /* Enable elements */
                 this.stopButton.Enabled = false;
 
@@ -342,19 +344,6 @@ namespace Ant {
             {
                 this.timesListBox.Items.Clear();
             }
-        }
-
-        /**
-           Delete before release.
-         */
-
-        private void debugToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Be sure to delete the Debug control before release.
-            int dumInt = 3;
-            String dumStr = "C:\\users\\anorm\\Desktop\\log.csv";
-            Windows.PromptWindow dumWin = new Windows.PromptWindow(dumInt,new WriteFile(dumStr,dumInt),new PromptManager(dumStr,"10:30 AM",dumInt));
-            dumWin.Show();
         }
     }
 }

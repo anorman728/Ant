@@ -197,9 +197,30 @@ ANT Notes:
                 * Topmost property.
             - Doesn't take focus.
                 * Combining this with topmost is possible, but will take time to find out.  Not worth doing at present, especially since I don't even like it.
+    + Disable number of fields on start.
+    + Try/Catch not working anymore.
+        * Try/Catch for open file isn't working.  It was before.
+        * The exception causes the program to crash instead of catching the exception.
+        * Turned out to be a debugger issue.
     > Release
+        + Find out how to update version in Visual Studio.
+            * In project properties -> Publish
+            * Also in Properties.AssemblyInfo.cs.
+        + Update about screen.
+            * Now automated-- If change Properties.AssemblyInfo.cs, this will change automatically.
+        + Remove debug button.
+            * Both button in designer and the event handler in the code.
+        + Test exhaustively.
+            + Normal use every five minutes for thirty minutes.
+            + File already open when try to write to it.
+            + Missed time.
+        > Publish
         > Create zip file with install files.
-    > Update README.md.
+    + Update README.md.
+        + Remember to update version.
+        + Update images and instructions.
+        + Add my homepage.
+            * Make sure to add that I'm open to writing custom software.
 > 1.2.0 additions.
     > Multi-select for deleting times in Prompt Times listbox.
     > Minimize to systray.

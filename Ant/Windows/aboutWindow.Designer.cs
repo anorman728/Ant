@@ -35,19 +35,19 @@
             this.sourceCodeLink = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.devPageLink = new System.Windows.Forms.LinkLabel();
+            this.versionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Location = new System.Drawing.Point(12, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(484, 264);
+            this.label1.Size = new System.Drawing.Size(484, 216);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ant v. 1.0.0\r\n\r\nAnt = \r\n\r\n    Andrew\r\n    Norman\'s\r\n    Timelogger\r\n\r\nAnt is open" +
-    " source and distributed under an MIT license.\r\n\r\nVisit the following site for de" +
-    "tails:";
+            this.label1.Text = "Ant = \r\n\r\n    Andrew\r\n    Norman\'s\r\n    Timelogger\r\n\r\nAnt is open source and dist" +
+    "ributed under an MIT license.\r\n\r\nVisit the following site for details:";
             // 
             // licenseLink
             // 
@@ -105,11 +105,22 @@
             this.devPageLink.Text = "https://anorman728.com";
             this.devPageLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.devPageLink_LinkClicked);
             // 
+            // versionLabel
+            // 
+            this.versionLabel.AutoSize = true;
+            this.versionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versionLabel.Location = new System.Drawing.Point(16, 13);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(62, 24);
+            this.versionLabel.TabIndex = 6;
+            this.versionLabel.Text = "Ant v. ";
+            // 
             // aboutWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 469);
+            this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.devPageLink);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.sourceCodeLink);
@@ -132,5 +143,6 @@
         private System.Windows.Forms.LinkLabel sourceCodeLink;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel devPageLink;
+        private System.Windows.Forms.Label versionLabel;
     }
 }

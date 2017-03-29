@@ -16,6 +16,7 @@ namespace Ant
         public aboutWindow()
         {
             InitializeComponent();
+            this.versionLabel.Text += Application.ProductVersion.ToString();
         }
         
         private void licenseLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
