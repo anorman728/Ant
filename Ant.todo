@@ -202,7 +202,7 @@ ANT Notes:
         * Try/Catch for open file isn't working.  It was before.
         * The exception causes the program to crash instead of catching the exception.
         * Turned out to be a debugger issue.
-    > Release
+    + Release
         + Find out how to update version in Visual Studio.
             * In project properties -> Publish
             * Also in Properties.AssemblyInfo.cs.
@@ -214,8 +214,8 @@ ANT Notes:
             + Normal use every five minutes for thirty minutes.
             + File already open when try to write to it.
             + Missed time.
-        > Publish
-        > Create zip file with install files.
+        + Publish
+        + Create zip file with install files.
     + Update README.md.
         + Remember to update version.
         + Update images and instructions.
