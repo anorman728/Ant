@@ -1,4 +1,4 @@
-# Ant v. 1.1.0.
+# Ant v. 1.1.1.
 
 
 "Ant" is an acronym for "Andrew Norman's Timelogger."  On a schedule that you define, it will ask you "What are you working on right now?", then will take your response and store it in a CSV file with a timestamp, which can be opened in a spreadsheet program like Excel.  
@@ -11,7 +11,7 @@ For example, if you set it up to ask you once an hour on the hour, by the end of
 
 ![Spreadsheet Example](/Readme%20pics/Spreadsheet%20Example.png?raw=true)
 
-Ant can be installed with [the installer program](/Ant%20Installer%201.1.0.zip).
+Ant can be installed with [the installer program](/Ant%20Installer%201.1.1.zip).
 
 Ant is currently a Windows-only program.
 

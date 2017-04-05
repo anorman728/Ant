@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Ant.exe" version="1.1.1.4" publicKeyToken="87bd781a8cb25fbb" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="ant.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Ant" version="1.1.1.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Ant.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ant.exe" size="202208">
+      <assemblyIdentity name="Ant" version="1.1.1.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Z21lLBZNEdkRS0pjEpRroHb/yRPiWcMT75a3flH0kVw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Ant.exe.config" size="1154">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4wsMdBi+56wZmV7SVYrOneM7JODZDL2VYfIS3ZS3M6A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="ant.ico" size="27362">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nktlbMjfX+mRwAvzdTFNZnGXw3HCD1vDGGI6iV8nuIU=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-E7EGUOP\anorm" issuerKeyHash="84d00304fb1ba01f5e302dd2dabf54424416f805" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>+Vsg+dgvhhm5a4w10ranwI5R7z0BQUw9aDABcRsu6NY=</DigestValue></Reference></SignedInfo><SignatureValue>QafwmsDDVV/HI3H34sC/p5TQZS4yE4hQxmSk7FKVQQ99Z3OPjpVjFiKj61HF143/5az+veFfLmRSo9F2+iqpzqd5rGogfUVJRzJdZy70Ue/qzVka5IhJjiBe0ME2oRm30dr/Ch6BsoLnviKWDRhIl73e2ku0P5cdr+Dwz4gCdw8=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>iHWL10x+wqOkh1lf4rYtylGwNhowhOrMF6Ov4WWQ7tyr6oCN2ptWLqQruRNMm1AQUfDCPS/NvxY2ihxtWGM+vvaCEVXxIvQhf011RtvBBxnFeVUZr5IUTc6g0+jZXZYebOgr4s7h8WDr2wWMFQG2zesDeWjtk2ogxmi41zAeZ9k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="d6e82e1b710130683d4c41013def518ec0a7b6d2358c6bb919862fd8f9205bf9" Description="" Url=""><as:assemblyIdentity name="Ant.exe" version="1.1.1.4" publicKeyToken="87bd781a8cb25fbb" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-E7EGUOP\anorm</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>CHzQPez5OfMVJJPHO980EVPaNJRtldNnzBjVI7t+MBw=</DigestValue></Reference></SignedInfo><SignatureValue>JKfwqk2HdPB3IWO1hJ/tIxFsAGvX95C7t6bRClwZV6C4XRd3HWOOLs+LKrcZC2sVj3F5N5DSdL8eV4k1Kl39FL8SjBo05ktSxqUOOS+sA2QVxBRSW47F4nHJ1zb+B82jrvG1Z6TenVXE4Q+vwyWm2D1GzFG/PSUt90h+040Sp9M=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>iHWL10x+wqOkh1lf4rYtylGwNhowhOrMF6Ov4WWQ7tyr6oCN2ptWLqQruRNMm1AQUfDCPS/NvxY2ihxtWGM+vvaCEVXxIvQhf011RtvBBxnFeVUZr5IUTc6g0+jZXZYebOgr4s7h8WDr2wWMFQG2zesDeWjtk2ogxmi41zAeZ9k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQSLce55JSaq9CC9LamHn2lTANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAEUANwBFAEcAVQBPAFAAXABhAG4AbwByAG0wHhcNMTcwMzI0MTk0NTA1WhcNMTgwMzI1MDE0NTA1WjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAEUANwBFAEcAVQBPAFAAXABhAG4AbwByAG0wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAIh1i9dMfsKjpIdZX+K2LcpRsDYaMITqzBejr+FlkO7cq+qAjdqbVi6kK7kTTJtQEFHwwj0vzb8WNoocbVhjPr72ghFV8SL0IX9NdUbbwQcZxXlVGa+SFE3OoNPo2V2WHmzoK+LO4fFg69sFjBUBts3rA3lo7ZNqIMZouNcwHmfZAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAaq0OFyjQvmOOrnE/u/LLJsVnE0obJwOusDLpm+hPTZ6jBaFx0TKxT3PwrrDyp7P1+V8Z/XeelWwN/krNWR2Fc8LRHW3o0AcuM/JQonc4Mog1/sMOgb6BukbqtaNC1xMpEHV6+sUT55AB2G7QiDf81hnNjY7b4A6I8xXqYsSROl8=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
