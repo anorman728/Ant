@@ -13,7 +13,7 @@ For example, if you set it up to ask you once an hour on the hour, by the end of
 
 Ant can be installed with [the installer program](/Ant%20Installer%201.1.1.zip).
 
-Ant is currently a Windows-only program.
+Ant is currently a Windows-only program, but AntDebug.exe (the version created when Visual Studio is debugging the program) works fine in Wine.  (It also works as a standalone Windows exe if you want to use it without actually installing anything.)  This debug program is in the root directory of this repo.
 
 Ant is developed by Andrew Norman.  You can find my website at [https://anorman728.com](https://anorman728.com).
 
