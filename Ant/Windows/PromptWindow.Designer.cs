@@ -54,6 +54,7 @@
             this.Name = "PromptWindow";
             this.Text = "Ant Prompt";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PromptWindow_FormClosed);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PromptWindow_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();

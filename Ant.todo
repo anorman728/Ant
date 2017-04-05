@@ -222,5 +222,6 @@ ANT Notes:
         + Add my homepage.
             * Make sure to add that I'm open to writing custom software.
 > 1.2.0 additions.
+    > Warn that needs to be CSV file, not Excel file.
     > Multi-select for deleting times in Prompt Times listbox.
     > Minimize to systray.

@@ -33,6 +33,11 @@ namespace Ant.Windows
                 this.keyUpEvent(e);
             }
 
+            private void PromptWindow_FormClosed(object sender, FormClosedEventArgs e)
+            {
+                this.promptManagerObj.setIsUp(false);
+            }
+
         /**
          * Create the input textboxes in the window.
          *
@@ -130,6 +135,6 @@ namespace Ant.Windows
             this.Left = mainScreen.WorkingArea.Right - this.Width;
             this.Top = mainScreen.WorkingArea.Bottom - this.Height;
         }
-        
+
     }
 }
